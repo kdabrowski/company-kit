@@ -10,7 +10,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'simple_form'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
