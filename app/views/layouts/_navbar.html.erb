@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to "My companies", user_companies_path(current_user) %>
+      <li>
+    </ul>
+    </ul>
+    <ul class="nav pull-right navbar-nav">
+      <%- if current_user %>
+      <li>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      </li>
+      <% else %>
+        <li>
+          <%= link_to "Log In", new_user_session_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

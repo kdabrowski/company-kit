@@ -1,0 +1,7 @@
+<div>
+  <%= simple_form_for [current_user, @company] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.button :button, "Submit" %>
+  <% end %>
+</div>
