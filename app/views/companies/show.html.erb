@@ -1,2 +1,11 @@
-<%= @company.name %>
-<%= @company.address %>
+<div class="col-md-9">
+  <div class="row">
+    <h4> Name: </h4><%= @company.name %>
+    <h4> Address: </h4> <%= @company.address %>
+  </div>
+  <div class="row mt-2">
+    <%= link_to edit_user_company_path(current_user, @company) do %>
+      <div class="btn btn-default"> Edit </div>
+    <% end %>
+  </div>
+</div>

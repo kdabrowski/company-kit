@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = current_user.companies.build(comapny_params)
+    @company = current_user.companies.build(company_params)
     if @company.save
       redirect_to user_company_path(current_user, @company)
     else
@@ -14,7 +14,19 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def edit
+    @company = Company.find(params[:id])
+  end
+
   def update
+    @company = Company.find(params[:id])
+    @company.update(company_params)
+    if @company.save
+      redirect_to user_company_path(current_user, @company)
+    else
+      redirect_to :edit
+    end
+
   end
 
   def index
@@ -22,13 +34,12 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @user = current_user
     @company = Company.find(params[:id])
   end
 
   private
 
-  def comapny_params
+  def company_params
     params.require(:company).permit(:name, :address)
   end
 end

@@ -1,10 +1,14 @@
-<% @companies.each do |company| %>
-  <div>
-    <%= company.name %>
+<div class="col-md-9" >
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Name<h4>
+    </div>
   </div>
-  </br>
-  <div>
-    <%= company.address %>
-  </div>
-  </br>
-<% end %>
+  <% @companies.each do |company| %>
+    <div class="row">
+      <div class="col-md-2 ">
+        <%= link_to company.name, user_company_path(current_user, company) %>
+      </div>
+    </div>
+  <% end %>
+</div>
