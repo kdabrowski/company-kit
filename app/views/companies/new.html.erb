@@ -2,6 +2,6 @@
   <%= simple_form_for [current_user, @company] do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
-    <%= f.button :submit, "Create" %>
+    <%= f.button :submit, "Create", class: "btn btn-outline-success" %>
   <% end %>
 </div>

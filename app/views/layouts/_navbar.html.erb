@@ -2,7 +2,9 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="nav-item">
-        <%= link_to "My companies", user_companies_path(current_user), class: "nav-link" %>
+        <%- if current_user %>
+          <%= link_to "My companies", user_companies_path(current_user), class: "nav-link" %>
+        <% end %>
       <li>
     </ul>
     </ul>
